@@ -34,10 +34,8 @@ class _GalleryViewState extends State<GalleryView> {
             icon: new Icon(Icons.chevron_left, size: 40,),
             onPressed: () {
               setState(() {
-                print(currentIndex);
                 if(currentIndex != 0 ){
                   currentIndex = --currentIndex; }
-                print(currentIndex);
               });
               
             },
@@ -52,11 +50,9 @@ class _GalleryViewState extends State<GalleryView> {
             icon: new Icon(Icons.chevron_right, size: 40),
             onPressed: () {
               setState(() {
-                print(currentIndex);
                 if(currentIndex !=imageList.length-1 ){
                     currentIndex = ++currentIndex;
                 }
-                print(currentIndex);
               });
             },
           )
