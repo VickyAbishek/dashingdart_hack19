@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "181133074719",
+    "firebase_url": "https://dashingdart-151099.firebaseio.com",
+    "project_id": "dashingdart-151099",
+    "storage_bucket": "dashingdart-151099.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:181133074719:android:a9fdf59f6dbb955d",
+        "android_client_info": {
+          "package_name": "com.example.dashingdir"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "181133074719-1k0d2m18221p6od6n22b7vsiu7f2tjaj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA7vE40aT38oW93VftFHXOMT_yC15P0MAk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "181133074719-1k0d2m18221p6od6n22b7vsiu7f2tjaj.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
