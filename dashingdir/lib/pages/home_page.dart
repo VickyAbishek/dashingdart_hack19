@@ -151,6 +151,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
+
   _updateCommunity(Community community){
     //Toggle completed
     community.isActive = !community.isActive;
@@ -258,12 +259,22 @@ class _HomePageState extends State<HomePage> {
 //                  child: Text(subject, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
                   child: Column(
                     children: <Widget>[
-                      Text("Community: "+ subject, textAlign: TextAlign.start, style: TextStyle(fontSize: 30.0)),
+                      Text(subject, textAlign: TextAlign.start, style: TextStyle(fontSize: 30.0, color: Color(0xFF2196F3)),),
+                      Padding(
+                        padding: EdgeInsets.all(10.0),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: <Widget>[
-                          Text("City: " + location, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
-                          Text("Member: " + membersCount.toString(), textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                          Row(children: <Widget>[
+                            Icon(Icons.location_on),
+                            Text(location, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                          ]),
+                          Row(children: <Widget>[
+
+                            Icon(Icons.account_box),
+                            Text(membersCount.toString(), textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                          ]),
                         ],
                       )
                     ],
@@ -306,7 +317,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('Flutter Communities'),
+          title: new Center(child: new Text('Flutter Communities')),
           actions: <Widget>[
             new FlatButton(
                 child: new Text('Logout',

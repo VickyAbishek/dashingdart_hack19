@@ -8,7 +8,7 @@ class MyDashboard extends StatelessWidget {
           debugShowCheckedModeBanner: false,
           home: Scaffold(
             appBar: AppBar(
-              title: Text("Dashboard"),
+              title: new Center(child: Text("Dashboard")),
             ),
           body: _myListView(context),
           floatingActionButton: new FloatingActionButton(

@@ -13,17 +13,23 @@ class _GalleryViewState extends State<GalleryView> {
   Widget build(BuildContext context) {
 
     var imageList = [
-      "https://uae.microless.com/cdn/no_image.jpg",
-      "https://images-na.ssl-images-amazon.com/images/I/81aF3Ob-2KL._UX679_.jpg",
-      "https://www.boostmobile.com/content/dam/boostmobile/en/products/phones/apple/iphone-7/silver/device-front.png.transform/pdpCarousel/image.jpg",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSgUgs8_kmuhScsx-J01d8fA1mhlCR5-1jyvMYxqCB8h3LCqcgl9Q",
-      "https://ae01.alicdn.com/kf/HTB11tA5aiAKL1JjSZFoq6ygCFXaw/Unlocked-Samsung-GALAXY-S2-I9100-Mobile-Phone-Android-Wi-Fi-GPS-8-0MP-camera-Core-4.jpg_640x640.jpg",
-      "https://media.ed.edmunds-media.com/gmc/sierra-3500hd/2018/td/2018_gmc_sierra-3500hd_f34_td_411183_1600.jpg",
-      "https://hips.hearstapps.com/amv-prod-cad-assets.s3.amazonaws.com/images/16q1/665019/2016-chevrolet-silverado-2500hd-high-country-diesel-test-review-car-and-driver-photo-665520-s-original.jpg",
-      "https://www.galeanasvandykedodge.net/assets/stock/ColorMatched_01/White/640/cc_2018DOV170002_01_640/cc_2018DOV170002_01_640_PSC.jpg",
-      "https://media.onthemarket.com/properties/6191869/797156548/composite.jpg",
-      "https://media.onthemarket.com/properties/6191840/797152761/composite.jpg",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.02%20PM%20(1).jpeg?alt=media&token=7d922861-3095-4cd4-b84f-e2ce2b27f5e2",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.02%20PM%20(2).jpeg?alt=media&token=55314b01-c8e4-48ec-abb5-51e09838b684",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.02%20PM.jpeg?alt=media&token=6cdf7f5a-7fec-4488-9c5c-3e7c03c4db0b",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.03%20PM%20(1).jpeg?alt=media&token=a4073a71-8cc0-4f18-8822-3347d53a30d9",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.04%20PM%20(1).jpeg?alt=media&token=164786ab-9763-43f5-b04a-5edf30394c26",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.04%20PM%20(2).jpeg?alt=media&token=47cc8bcc-f422-4a56-b840-b40a1c418567",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.04%20PM%20(2).jpeg?alt=media&token=47cc8bcc-f422-4a56-b840-b40a1c418567",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.08%20PM.jpeg?alt=media&token=aaa73bcc-db7b-43c0-ac7b-705dd89445aa",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.08%20PM.jpeg?alt=media&token=aaa73bcc-db7b-43c0-ac7b-705dd89445aa",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.07%20PM.jpeg?alt=media&token=3da43693-ab0b-4f1d-bbc7-cc4e4637d687",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.07%20PM%20(1).jpeg?alt=media&token=4d6c63de-6739-46e2-a68c-73a7df779f20",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.05%20PM.jpeg?alt=media&token=c3cc227a-a550-4f77-acc4-ce8446bf5e52",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.07%20PM%20(1).jpeg?alt=media&token=4d6c63de-6739-46e2-a68c-73a7df779f20",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.06%20PM.jpeg?alt=media&token=f08020c7-5391-4d1a-ae6c-599e988dd2cd",
+      "https://firebasestorage.googleapis.com/v0/b/dashingdart-151099.appspot.com/o/WhatsApp%20Image%202019-06-01%20at%205.11.02%20PM%20(2).jpeg?alt=media&token=55314b01-c8e4-48ec-abb5-51e09838b684"
     ];
+
 
 
     return Container(
