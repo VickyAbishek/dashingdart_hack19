@@ -1,8 +1,11 @@
+import 'package:dashingdir/models/community.dart';
 import 'package:flutter/material.dart';
 import 'package:dashingdir/pages/gallery.dart';
 
 class AboutCommunity extends StatelessWidget {
   String communityName = "Pune Flutter Group";
+  Community community;
+  AboutCommunity(this.community);
 
   @override
   Widget build(BuildContext context) {
@@ -11,15 +14,15 @@ class AboutCommunity extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         home:Scaffold(
           appBar: new AppBar(
-            title: Text(communityName),
+            title: Text(community.communityName),
           ),
 
           body: ListView(
             children: <Widget>[
               AboutUsHeader(),
-              CommunityDetails(),
+              CommunityDetails(community.details),
               LocationHeader(),
-              LocationDetails(),
+              LocationDetails(community.location),
               SocialMediaHeader(),
               SocialMediaIcons(),
               GalleryHeader(),
@@ -39,8 +42,9 @@ class AboutCommunity extends StatelessWidget {
 }
 
 class CommunityDetails extends StatelessWidget {
-  String aboutUsContent = "Asdf asd fasd fsd gadsg ag to query , your widget will be scheduled to be rebuilt, keeping your widget up-to-dateYou can use this function to query the size an orientation of the screen. When that information changes, your widget will be scheduled to be rebuilt, keeping your widget up-to-date.You can use this function to query the size an orientation of the screen. When that information changes, your widget will be scheduled to be rebuilt, keeping your widget up-to-date.";
-
+  // String aboutUsContent = "Asdf asd fasd fsd gadsg ag to query , your widget will be scheduled to be rebuilt, keeping your widget up-to-dateYou can use this function to query the size an orientation of the screen. When that information changes, your widget will be scheduled to be rebuilt, keeping your widget up-to-date.You can use this function to query the size an orientation of the screen. When that information changes, your widget will be scheduled to be rebuilt, keeping your widget up-to-date.";
+  String aboutUsContent;
+  CommunityDetails(this.aboutUsContent);
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -147,9 +151,10 @@ class GalleryHeader extends StatelessWidget {
 }
 
 class LocationDetails extends StatelessWidget {
+  String location;
+  LocationDetails(this.location);
   @override
   Widget build(BuildContext context) {
-
     return Container(
         decoration: new BoxDecoration(
             color: const Color(0xFF42a5f5),
@@ -167,7 +172,7 @@ class LocationDetails extends StatelessWidget {
           children: <Widget>[
             Container(
               width: MediaQuery.of(context).size.width * 0.60,
-              child: LocationText(),
+              child: LocationText(location),
             ),
             Icon(Icons.location_on, size: 40),
           ],
@@ -177,8 +182,9 @@ class LocationDetails extends StatelessWidget {
 }
 
 class LocationText extends StatelessWidget {
-  String locationDetails = "Marigold complex, Wadgaon Sheri, Pune, Maharashtra 411014";
-
+  //String locationDetails = "Marigold complex, Wadgaon Sheri, Pune, Maharashtra 411014";
+  LocationText(this.locationDetails);
+  String locationDetails;
   @override
   Widget build(BuildContext context) {
     return Text(

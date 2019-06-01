@@ -159,8 +159,7 @@ class _HomePageState extends State<HomePage> {
     }
 
     Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
-      //return AboutCommunity(community);
-      return AboutCommunity();
+      return AboutCommunity(community);
     }));
 
 //    Navigator.push( builder: (context) => AboutCommunity() );
