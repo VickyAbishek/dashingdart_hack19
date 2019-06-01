@@ -240,18 +240,25 @@ class _HomePageState extends State<HomePage> {
                 _deleteCommunity(communityId, index);
               },
               child: ListTile(
-                title: Text(
+                title: Card(
+                  elevation: 9.0,
+                  child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(subject, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                  ),
+                ),
+            /*Text(
                   subject,
                   style: TextStyle(fontSize: 20.0),
-                ),
+                ),*/
                 trailing: IconButton(
                     icon: (completed)
                         ? Icon(
-                      Icons.done_outline,
+                      Icons.arrow_forward_ios,
                       color: Colors.green,
                       size: 20.0,
                     )
-                        : Icon(Icons.done, color: Colors.grey, size: 20.0),
+                        : Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 20.0),
                     onPressed: () {
                       _updateCommunity(_communityList[index]);
                     }),
@@ -269,7 +276,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return new Scaffold(
         appBar: new AppBar(
-          title: new Text('Flutter login demo'),
+          title: new Text('Flutter Communities'),
           actions: <Widget>[
             new FlatButton(
                 child: new Text('Logout',
