@@ -1,6 +1,7 @@
 import 'package:dashingdir/pages/root_page.dart';
 import 'package:dashingdir/services/authentication.dart';
 import 'package:flutter/material.dart';
+import 'package:dashingdir/pages/home_page.dart';
 
 void main() {
   runApp(new MyApp());
@@ -15,6 +16,11 @@ class MyApp extends StatelessWidget {
         theme: new ThemeData(
           primarySwatch: Colors.blue,
         ),
-        home: new RootPage(auth: new Auth()));
+        home: new RootPage(auth: new Auth()),
+        routes: <String, WidgetBuilder>{
+          "/dashboard": (BuildContext context) => HomePage(),
+//          "/details": (BuildContext context) =>
+        },
+    );
   }
 }

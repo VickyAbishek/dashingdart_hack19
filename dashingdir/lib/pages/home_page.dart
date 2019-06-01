@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:dashingdir/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:dashingdir/models/community.dart';
+import 'package:dashingdir/pages/about.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
@@ -156,6 +157,14 @@ class _HomePageState extends State<HomePage> {
     if (community != null) {
       _database.reference().child("community").child(community.key).set(community.toJson());
     }
+
+    Navigator.of(context).push(MaterialPageRoute(builder: (BuildContext context) {
+      //return AboutCommunity(community);
+      return AboutCommunity();
+    }));
+
+//    Navigator.push( builder: (context) => AboutCommunity() );
+
   }
 
   _deleteCommunity(String communityId, int index) {
@@ -233,6 +242,9 @@ class _HomePageState extends State<HomePage> {
             String subject = _communityList[index].communityName;
             bool completed = _communityList[index].isActive;
             String userId = _communityList[index].userId;
+            String location = _communityList[index].location;
+            var membersCount = _communityList[index].memberCount;
+
             return Dismissible(
               key: Key(communityId),
               background: Container(color: Colors.red),
@@ -244,24 +256,43 @@ class _HomePageState extends State<HomePage> {
                   elevation: 9.0,
                   child: Padding(
                   padding: const EdgeInsets.all(8.0),
-                  child: Text(subject, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+//                  child: Text(subject, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                  child: Column(
+                    children: <Widget>[
+                      Text("Community: "+ subject, textAlign: TextAlign.start, style: TextStyle(fontSize: 30.0)),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("City: " + location, textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                          Text("Member: " + membersCount.toString(), textAlign: TextAlign.center, style: TextStyle(fontSize: 22.0)),
+                        ],
+                      )
+                    ],
+
+                  )
                   ),
                 ),
+            onLongPress: () {
+              _updateCommunity(_communityList[index]);
+            },
+            onTap: (){
+              _updateCommunity(_communityList[index]);
+            },
             /*Text(
                   subject,
                   style: TextStyle(fontSize: 20.0),
                 ),*/
-                trailing: IconButton(
-                    icon: (completed)
-                        ? Icon(
-                      Icons.arrow_forward_ios,
-                      color: Colors.green,
-                      size: 20.0,
-                    )
-                        : Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 20.0),
-                    onPressed: () {
-                      _updateCommunity(_communityList[index]);
-                    }),
+//                trailing: IconButton(
+//                    icon: (completed)
+//                        ? Icon(
+//                      Icons.arrow_forward_ios,
+//                      color: Colors.green,
+//                      size: 20.0,
+//                    )
+//                        : Icon(Icons.arrow_forward_ios, color: Colors.grey, size: 20.0),
+//                    onPressed: () {
+//                      _updateCommunity(_communityList[index]);
+//                    }),
               ),
             );
           });
